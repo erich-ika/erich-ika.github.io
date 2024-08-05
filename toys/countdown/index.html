@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown</title>
-  <script defer src="script.js">
-  </script>
-</head>
-<body>
-  <h1 id="clock"></h1>
-  <h2 id="clock2"></h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <p>Faltam</p>
+      <h2 id="at"></h2>
+      <p>para</p>
+      <h2 id="to"></h2>
+    </main>
+    <footer>
+      <p>Temporizador criado por <span id="by"></span></p>
+      <button onclick="window.location.href = '/toys/countdown'">Crie seu timer</button>
+      <p>Site por <span id="author">erich_ika</span></p>
+    </footer>
+  </body>
 </html>

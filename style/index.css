@@ -33,3 +33,16 @@ body {
   color: var(--Text);
   margin: 0;
 }
+
+button {
+  text-transform: uppercase;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--Base);
+  background-color: var(--Peach);
+}
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

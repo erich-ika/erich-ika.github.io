@@ -1,36 +1,43 @@
-const target = 1724036400000
-console.log(new Date())
+const author = 'erich_ika'
+
+const by = 'erich_ika'
+const to = 'Meu aniversário! :)'
+const at = 1724036400000
+
+function get(target) {
+  return document.getElementById(target)
+}
 
 class Time {
-  SECOND = 1000;
-  MINUTE = this.SECOND * 60;
-  HOUR = this.MINUTE * 60;
-  DAY = this.HOUR * 24;
   constructor(m) {
-    this.days = ~~(m / this.DAY)
-    this.hours = ~~(m % this.DAY / this.HOUR)
-    this.minutes = ~~(m % this.HOUR / this.MINUTE)
-    this.seconds = ~~(m % this.MINUTE / this.SECOND)
+    const SECOND = 1000;
+    const MINUTE = SECOND * 60;
+    const HOUR = MINUTE * 60;
+    const DAY = HOUR * 24;
+    this.days = ~~(m / DAY)
+    this.hours = ~~(m % DAY / HOUR)
+    this.minutes = ~~(m % HOUR / MINUTE)
+    this.seconds = ~~(m % MINUTE / SECOND) + 1
   }
   toString() {
-    return `${this.days}d ${this.hours}h ${this.minutes}m ${this.seconds}s`
+    return `${this.days
+      }d ${this.hours.toString().padStart(2, '0')
+      }h ${this.minutes.toString().padStart(2, '0')
+      }m ${this.seconds.toString().padStart(2, '0')
+      }s`
   }
 }
 
 function renderClock() {
   const now = new Date();
 
-  document.getElementById('clock').innerText = `${now.getDate().toString().padStart(2, '0')
-    }/${(now.getMonth() + 1).toString().padStart(2, '0')
-    }/${now.getFullYear()
-    } ${now.getHours().toString().padStart(2, '0')
-    }:${now.getMinutes().toString().padStart(2, '0')
-    }:${now.getSeconds().toString().padStart(2, '0')
-    }`
-
-  document.getElementById('clock2').innerText = new Time(target - now)
+  get('at').innerText = new Time(at - now)
 
   setTimeout(renderClock, 1E3 - (now % 1E3))
 }
 
 renderClock()
+
+get('to').innerText = to;
+get('by').innerText = by;
+get('author').innerText = author;

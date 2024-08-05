@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  margin: auto 0;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--Mantle);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--Peach);
+}
+
+#by {
+  color: var(--Peach);
+}
