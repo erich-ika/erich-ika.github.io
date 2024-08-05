@@ -30,7 +30,7 @@ function renderClock() {
 
   document.getElementById('clock2').innerText = new Time(target - now)
 
-  setTimeout(renderClock, 1E3)
+  setTimeout(renderClock, 1E3 - (now % 1E3))
 }
 
 renderClock()
