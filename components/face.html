@@ -1,0 +1,58 @@
+<style>
+  #face {
+    background-color: var(--Mantle);
+  }
+  #face .container {
+    height: 100vmin;
+    background-color: var(--Base);
+    border-radius: 0 0 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #face .center {
+    flex-basis: 800px;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #face .avatar {
+    border-radius: 50%;
+  }
+  #face .fa-arrow-down {
+    position: absolute;
+    bottom: 24px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -15px);
+    }
+    100% {
+      transform: translate(0, 0px);
+    }
+  }
+</style>
+<div id="face">
+  <div class="container">
+    <div class="center">
+      <div>
+        <h3>Que site bacana!</h3>
+        <p>Lorem ipsum sit amet, coisa e tal.</p>
+      </div>
+      <img
+        class="avatar"
+        src="https://avatars.githubusercontent.com/u/95936922"
+      />
+    </div>
+    <i class="fa-solid fa-arrow-down"></i>
+  </div>
+</div>

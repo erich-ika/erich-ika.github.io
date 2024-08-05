@@ -26,6 +26,11 @@
 
   <body>
     <div
+      hx-get="/components/face.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+    <div
       hx-get="/components/header.html"
       hx-trigger="load"
       hx-swap="outerHTML"
