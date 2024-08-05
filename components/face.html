@@ -3,7 +3,7 @@
     background-color: var(--Mantle);
   }
   #face .container {
-    height: 100vmin;
+    height: 100vh;
     background-color: var(--Base);
     border-radius: 0 0 100px 0;
     display: flex;
@@ -13,12 +13,18 @@
   #face .center {
     flex-basis: 800px;
     display: flex;
+    padding: 12px;
     gap: 12px;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
   }
+  #face .center > div {
+    min-width: min(300px, 100%);
+  }
   #face .avatar {
+    border: 3px solid var(--Text);
     border-radius: 50%;
   }
   #face .fa-arrow-down {
