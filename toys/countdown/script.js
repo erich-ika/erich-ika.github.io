@@ -69,6 +69,11 @@ function buttonMake() {
     by: get('by-in').value,
   };
 
+  if (!form.to || !form.at || !form.by) {
+    window.alert('Preencha todos os três campos')
+    return
+  }
+
   const url = new URL(window.location.href);
   url.searchParams.set('to', form.to);
   url.searchParams.set('at', form.at);
