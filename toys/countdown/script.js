@@ -1,11 +1,24 @@
 const author = 'erich_ika'
-
-const by = 'erich_ika'
-const to = 'Meu aniversário! :)'
-const at = 1724036400000
+let params = {
+  by: 'erich_ika',
+  to: 'Meu aniversário! :)',
+  at: 1724036400000,
+}
 
 function get(target) {
   return document.getElementById(target)
+}
+
+function getParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  params = {
+    by: urlParams.get('by'),
+    to: urlParams.get('to'),
+    at: urlParams.get('at'),
+  }
+  get('to').innerText = params.to;
+  get('by').innerText = params.by;
+  get('author').innerText = author;
 }
 
 class Time {
@@ -30,14 +43,10 @@ class Time {
 
 function renderClock() {
   const now = new Date();
-
-  get('at').innerText = new Time(at - now)
-
+  get('at').innerText = new Time(params.at - now)
   setTimeout(renderClock, 1E3 - (now % 1E3))
 }
 
+getParams();
 renderClock()
 
-get('to').innerText = to;
-get('by').innerText = by;
-get('author').innerText = author;
