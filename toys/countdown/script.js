@@ -1,12 +1,19 @@
 const author = 'erich_ika'
-let params = {
-  by: 'erich_ika',
-  to: 'Meu aniversário! :)',
-  at: 1724036400000,
-}
+let params = {}
 
 function get(target) {
   return document.getElementById(target)
+}
+
+function formMode(bool) {
+  document.querySelectorAll('.in')
+    .forEach(e => e.style.display = bool ? 'unset' : 'none')
+  document.querySelectorAll('.out')
+    .forEach(e => e.style.display = bool ? 'none' : 'unset')
+  if (!bool) {
+    const now = new Date();
+    get('at').innerText = new Time(params.at - now)
+  }
 }
 
 function getParams() {
@@ -19,6 +26,7 @@ function getParams() {
   get('to').innerText = params.to;
   get('by').innerText = params.by;
   get('author').innerText = author;
+  formMode(params.at == 'NaN' || !params.at || !params.by || !params.to)
 }
 
 class Time {
@@ -47,6 +55,27 @@ function renderClock() {
   setTimeout(renderClock, 1E3 - (now % 1E3))
 }
 
+function buttonCreate() {
+  const url = new URL(window.location.href);
+  url.search = '';
+  window.history.pushState({}, document.title, url)
+  getParams();
+}
+
+function buttonMake() {
+  const form = {
+    to: get('to-in').value,
+    at: new Date(get('at-in').value).getTime(),
+    by: get('by-in').value,
+  };
+
+  const url = new URL(window.location.href);
+  url.searchParams.set('to', form.to);
+  url.searchParams.set('at', form.at);
+  url.searchParams.set('by', form.by);
+  window.history.pushState({}, document.title, url);
+  getParams();
+}
+
 getParams();
 renderClock()
-

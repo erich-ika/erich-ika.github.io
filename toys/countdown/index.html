@@ -4,20 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countdown</title>
-    <link rel="stylesheet" href="/style/index.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style/index.css" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
   <body>
-    <main>
+    <main class="out">
       <p>Faltam</p>
       <h2 id="at"></h2>
       <p>para</p>
       <h2 id="to"></h2>
     </main>
+    <main class="in">
+      <p>Neste horário</p>
+      <input id="at-in" type="datetime-local">
+      <p>acontecerá</p>
+      <input id="to-in" type="text">
+    </main>
     <footer>
-      <p>Temporizador criado por <span id="by"></span></p>
-      <button onclick="window.location.href = '/toys/countdown'">Crie seu timer</button>
+      <p>
+        Temporizador criado por
+        <span id="by" class="out"></span>
+        <input id="by-in" class="in" type="text">
+      </p>
+      <button id="create-btn" class="out" onclick="buttonCreate()">
+        Crie seu timer
+      </button>
+      <button id="make-btn" class="in" onclick="buttonMake()">
+        Gerar
+      </button>
       <p>Site por <span id="author">erich_ika</span></p>
     </footer>
   </body>

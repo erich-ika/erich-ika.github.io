@@ -20,9 +20,34 @@ footer {
 
 h2 {
   font-size: 3rem;
+  line-height: 3rem;
+  margin: 3rem 0;
   color: var(--Peach);
+}
+
+main p {
+  margin: 0;
 }
 
 #by {
   color: var(--Peach);
+}
+
+input {
+  color: var(--Peach);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+main input {
+  font-size: 3rem;
+  height: 3rem;
+  text-align: center;
+  margin: 3rem 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.in {
+  display: none;
 }
